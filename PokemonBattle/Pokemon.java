@@ -1,7 +1,7 @@
 public class Pokemon {
-    private String nome;
+    private final String nome;
     private int saude;
-    private Tipo tipo;
+    private final Tipo tipo;
 
     public Pokemon(String nome, int saude, Tipo tipo) {
         this.nome = nome;
@@ -23,4 +23,15 @@ public class Pokemon {
         System.out.println(nome + " recebeu " + dano + " pontos de dano");
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public int getSaude() {
+        return saude;
+    }
+
+    public Tipo getTipo() {
+        return tipo;
+    }
 }

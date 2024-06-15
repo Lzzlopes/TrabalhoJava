@@ -3,9 +3,10 @@ public enum Tipo {
     Fogo,
     Agua,
     Voador,
-    Lutador,
+    Luta,
     Veneno,
     Gelo,
     Fantasma,
     Pedra,
+    Grama
 }

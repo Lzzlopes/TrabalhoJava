@@ -1,0 +1,5 @@
+Charmander, 100, Fogo
+Squirtle, 90, Agua
+Bulbassauro, 95, Grama
+Pikachu, 90, Eletrico
+Machop, 97, Luta
