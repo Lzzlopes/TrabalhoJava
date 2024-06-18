@@ -1,0 +1,35 @@
+
+Salvar as informações
+ 
+Permanecer 
+
+
+
+
+Implementação das Funcionalidades
+Utilização de Coleções:
+
+Implementar o uso de coleções (como ArrayList, HashMap, etc.) para armazenar e manipular dados dentro do projeto.
+Herança e Polimorfismo:
+
+Criar uma hierarquia de classes que demonstre herança, com classes base e subclasses que estendam o comportamento.
+Utilizar interfaces para definir contratos e promover o polimorfismo entre diferentes classes.
+Tratamento de Exceções:
+
+Implementar tratamento adequado de exceções para lidar com possíveis erros durante a execução do programa.
+Garantir robustez na aplicação ao lidar com situações inesperadas, como falhas na leitura/gravação de arquivos.
+Persistência de Dados:
+
+Implementar funcionalidades de leitura e gravação de dados em arquivos de texto ou JSON.
+Manter a integridade dos dados mesmo em situações de reinicialização do sistema.
+
+
+Apresentação e Defesa do Projeto
+Apresentação Funcional:
+
+Preparar uma apresentação funcional do software, demonstrando todas as funcionalidades implementadas.
+Pelo menos um membro da equipe deve realizar a apresentação, com todos os membros presentes para responder perguntas.
+Respostas às Perguntas:
+
+Todos os membros devem estar preparados para responder perguntas sobre o projeto.
+A falta de conhecimento sobre partes do projeto pode resultar em perda de nota individual, mesmo que o trabalho tenha sido feito em equipe.
