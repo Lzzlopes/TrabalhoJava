@@ -10,12 +10,11 @@ public class Aco extends Pokemon {
 
     private boolean Defense;
 
-    public Aco(String codigo, String nome, int saude, Tipo tipo, Tipo magneticBomb, Tipo ironHead, Tipo tackle,
-            Tipo Defense) {
+    public Aco(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.MagneticBomb = Tipo.ACO;
-        this.IronHead = Tipo.ACO;
-        this.Tackle = Tipo.NORMAL;
+        this.MagneticBomb = Tipo.Aco;
+        this.IronHead = Tipo.Aco;
+        this.Tackle = Tipo.Normal;
         this.Defense = false;
     }
 

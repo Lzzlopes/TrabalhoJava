@@ -7,14 +7,13 @@ public class Voador extends Pokemon {
     private Tipo AerialAce;
     private boolean Defense;
 
-    public Voador(String codigo, String nome, int saude, Tipo tipo, Tipo wingAttack, Tipo airSlash, Tipo aerialAce,
-            boolean defense)
+    public Voador(String codigo, String nome, int saude, Tipo tipo)
 
     {
         super(codigo, nome, saude, tipo);
-        this.WingAttack = Tipo.VOADOR;
-        this.AirSlash = Tipo.VOADOR;
-        this.AerialAce = Tipo.VOADOR;
+        this.WingAttack = Tipo.Voador;
+        this.AirSlash = Tipo.Voador;
+        this.AerialAce = Tipo.Voador;
         this.Defense = false;
     }
 

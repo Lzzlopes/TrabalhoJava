@@ -7,12 +7,11 @@ public class Noturno extends Pokemon {
     private Tipo Tackle;
     private boolean Defense;
 
-    public Noturno(String codigo, String nome, int saude, Tipo tipo, Tipo bite, Tipo foulPlay, Tipo tackle,
-            boolean defense) {
+    public Noturno(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.Bite = Tipo.NOTURNO;
-        this.FoulPlay = Tipo.NOTURNO;
-        this.Tackle = Tipo.NORMAL;
+        this.Bite = Tipo.Noturno;
+        this.FoulPlay = Tipo.Noturno;
+        this.Tackle = Tipo.Normal;
         this.Defense = false;
     }
 

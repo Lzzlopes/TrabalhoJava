@@ -1,17 +1,26 @@
-import java.util.Random;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
+import Tipos.Pokemon;
+import Tipos.Tipo;
 
 public class Interface {
 
     public Scanner scanner;
 
-    public Interface() {
+    OperacoesArquivos opArq = new OperacoesArquivos();
+
+    private static String batalha = "C:\\Users\\luizg\\Desktop\\java\\pj\\src\\PokemonBattle\\Arquivos";
+
+    File arquivo = new File("batalha.txt");
+
+    public Interface() throws IOException {
         scanner = new Scanner(System.in);
         iniciar();
     }
 
-    public void iniciar() {
+    public void iniciar() throws IOException {
         imprimirCabecalho();
         exibirMenuInicial();
     }
@@ -27,7 +36,10 @@ public class Interface {
         System.out.println("                                                                                 ");
     }
 
-    public void exibirMenuInicial() {
+    public void exibirMenuInicial() throws IOException {
+
+        opArq.preencherLista();
+
         System.out.println("01. Novo Jogo");
         System.out.println("02. Carregar Jogo");
 
@@ -37,7 +49,16 @@ public class Interface {
         switch (opcao) {
             case 1:
                 menuNovoJogo();
-                // Criar arquivo txt com 
+                if (arquivo.exists()) {
+                    break;
+                } else {
+                    try {
+                        arquivo.createNewFile();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
                 break;
             case 2:
                 menuCarregarJogo();
@@ -58,11 +79,23 @@ public class Interface {
 
         switch (opcao) {
             case 1:
-                System.out.println("Escolha seu Pokémon (não implementado).");
+                while (true) {
+                    System.out.println("Escolha o tipo do seu pokemon:");
+                    String tipo = scanner.nextLine();
+                    try {
+                        Tipo tipoEscolhido = Tipo.valueOf(tipo);
+                        opArq.mostrarPokemonsPorTipo(tipoEscolhido);
+                        System.out.println("Digite o codigo do Pokemon que deseja");
+                        Pokemon p1 = opArq.escolherPokemon(scanner.nextLine());
+                        break;
+
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Tipo de pokemon inválido.");
+                    }
+                }
                 break;
             case 2:
-                int pokemonEscolhido = new Random().nextInt(10) + 1;
-                System.out.println("Pokémon escolhido aleatoriamente: " + pokemonEscolhido);
+                Pokemon p1 = opArq.sortearPokemon();
                 break;
             default:
                 System.out.println("Opção inválida.");
@@ -73,7 +106,7 @@ public class Interface {
         exibirTelaPrincipal();
     }
 
-    public void menuCarregarJogo() {
+    public void menuCarregarJogo() throws IOException {
         System.out.println("01. Exibir Jogos Salvos");
         System.out.println("02. Retornar");
 
@@ -171,4 +204,5 @@ public class Interface {
         System.out.println("Parabéns! Seu Pokémon foi curado.");
         exibirTelaPrincipal();
     }
+
 }

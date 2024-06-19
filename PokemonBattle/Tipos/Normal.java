@@ -7,12 +7,11 @@ public class Normal extends Pokemon {
     private Tipo Gust;
     private boolean Defense;
 
-    public Normal(String codigo, String nome, int saude, Tipo tipo, Tipo tackle, Tipo wingAttack, Tipo gust,
-            boolean defense) {
+    public Normal(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.Tackle = Tipo.NORMAL;
-        this.WingAttack = Tipo.NORMAL;
-        this.Gust = Tipo.NORMAL;
+        this.Tackle = Tipo.Normal;
+        this.WingAttack = Tipo.Normal;
+        this.Gust = Tipo.Normal;
         this.Defense = false;
     }
 

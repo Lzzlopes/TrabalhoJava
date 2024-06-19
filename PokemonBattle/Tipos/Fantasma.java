@@ -7,12 +7,11 @@ public class Fantasma extends Pokemon {
     private Tipo Lick;
     private boolean Defense;
 
-    public Fantasma(String codigo, String nome, int saude, Tipo tipo, Tipo shadowBall, Tipo shadowPunch, Tipo lick,
-            Tipo defense) {
+    public Fantasma(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.ShadowBall = Tipo.FANTASMA;
-        this.ShadowPunch = Tipo.FANTASMA;
-        this.Lick = Tipo.NORMAL;
+        this.ShadowBall = Tipo.Fantasma;
+        this.ShadowPunch = Tipo.Fantasma;
+        this.Lick = Tipo.Normal;
         this.Defense = false;
     }
 

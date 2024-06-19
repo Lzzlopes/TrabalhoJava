@@ -7,12 +7,11 @@ public class Terra extends Pokemon {
     private Tipo Bulldoze;
     private boolean Defense;
 
-    public Terra(String codigo, String nome, int saude, Tipo tipo, Tipo earthquake, Tipo mudSlap, Tipo bulldoze,
-            boolean defense) {
+    public Terra(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.Earthquake = Tipo.TERRA;
-        this.MudSlap = Tipo.TERRA;
-        this.Bulldoze = Tipo.NORMAL;
+        this.Earthquake = Tipo.Terra;
+        this.MudSlap = Tipo.Terra;
+        this.Bulldoze = Tipo.Normal;
         this.Defense = false;
     }
 

@@ -8,15 +8,14 @@ public class Psiquico extends Pokemon {
 
     private Tipo Psychock;
 
-    private Tipo Defense;
+    private boolean Defense;
 
-    public Psiquico(String codigo, String nome, int saude, Tipo tipo, Tipo Tackle, Tipo psybeam, Tipo psychock,
-            Tipo defense) {
+    public Psiquico(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        Tackle = Tipo.NORMAL;
-        Psybeam = Tipo.PSIQUICO;
-        Psychock = Tipo.PSIQUICO;
-        Defense = defense;
+        Tackle = Tipo.Normal;
+        Psybeam = Tipo.Psiquico;
+        Psychock = Tipo.Psiquico;
+        Defense = false;
     }
 
     @Override

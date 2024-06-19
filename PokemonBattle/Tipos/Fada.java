@@ -7,13 +7,12 @@ public class Fada extends Pokemon {
     private Tipo Pound;
     private boolean Defense;
 
-    public Fada(String codigo, String nome, int saude, Tipo tipo, Tipo fairyWind, Tipo dazzlingGleam, Tipo pound,
-            boolean defense) {
+    public Fada(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        FairyWind = fairyWind;
-        DazzlingGleam = dazzlingGleam;
-        Pound = pound;
-        Defense = defense;
+        FairyWind = Tipo.Fada;
+        DazzlingGleam = Tipo.Fada;
+        Pound = Tipo.Normal;
+        Defense = false;
     }
 
     @Override

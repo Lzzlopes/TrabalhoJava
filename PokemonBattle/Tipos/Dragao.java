@@ -7,12 +7,11 @@ public class Dragao extends Pokemon {
     private Tipo Headbutt;
     private boolean Defense;
 
-    public Dragao(String codigo, String nome, int saude, Tipo tipo, Tipo dragonBreath, Tipo dragonPulse, Tipo headbutt,
-            Tipo defense) {
+    public Dragao(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.DragonBreath = Tipo.DRAGAO;
-        this.DragonPulse = Tipo.DRAGAO;
-        this.Headbutt = Tipo.NORMAL;
+        this.DragonBreath = Tipo.Dragao;
+        this.DragonPulse = Tipo.Dragao;
+        this.Headbutt = Tipo.Normal;
         this.Defense = false;
     }
 

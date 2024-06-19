@@ -7,12 +7,11 @@ public class Eletrico extends Pokemon {
     private Tipo IronTail;
     private boolean Defense;
 
-    public Eletrico(String codigo, String nome, int saude, Tipo tipo, Tipo thunderShock, Tipo thunderBolt,
-            Tipo ironTail, boolean defense) {
+    public Eletrico(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        ThunderShock = Tipo.ELETRICO;
-        ThunderBolt = Tipo.ELETRICO;
-        IronTail = Tipo.NORMAL;
+        ThunderShock = Tipo.Eletrico;
+        ThunderBolt = Tipo.Eletrico;
+        IronTail = Tipo.Normal;
         Defense = false;
     }
 

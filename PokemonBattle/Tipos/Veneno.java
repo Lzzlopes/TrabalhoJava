@@ -2,8 +2,17 @@ package Tipos;
 
 public class Veneno extends Pokemon {
 
-    public Veneno(String id, String nome, int saude) {
-        super(id, nome, saude, Tipo.VENENO);
+    private Tipo VenoShock;
+    private Tipo SludgeBomb;
+    private Tipo bodySlam;
+    private boolean Defense;
+
+    public Veneno(String id, String nome, int saude, Tipo tipo) {
+        super(id, nome, saude, tipo);
+        this.VenoShock = Tipo.Veneno;
+        this.SludgeBomb = Tipo.Veneno;
+        this.bodySlam = Tipo.Normal;
+        this.Defense = false;
     }
 
     @Override

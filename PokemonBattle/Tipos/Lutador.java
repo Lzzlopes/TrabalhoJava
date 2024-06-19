@@ -7,12 +7,11 @@ public class Lutador extends Pokemon {
     private Tipo LowKick;
     private boolean Defense;
 
-    public Lutador(String codigo, String nome, int saude, Tipo tipo, Tipo karateChop, Tipo dynamicPunch, Tipo lowKick,
-            Tipo defense) {
+    public Lutador(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.KarateChop = Tipo.LUTADOR;
-        this.DynamicPunch = Tipo.LUTADOR;
-        this.LowKick = Tipo.NORMAL;
+        this.KarateChop = Tipo.Lutador;
+        this.DynamicPunch = Tipo.Lutador;
+        this.LowKick = Tipo.Normal;
         this.Defense = false;
     }
 

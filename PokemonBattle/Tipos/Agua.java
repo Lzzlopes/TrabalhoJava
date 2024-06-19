@@ -10,12 +10,11 @@ public class Agua extends Pokemon {
 
     private boolean Defense;
 
-    public Agua(String codigo, String nome, int saude, Tipo tipo, Tipo waterGun, Tipo hydroPump, Tipo bite,
-            Tipo defense) {
+    public Agua(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.WaterGun = Tipo.AGUA;
-        this.HydroPump = Tipo.AGUA;
-        this.Bite = Tipo.NORMAL;
+        this.WaterGun = Tipo.Agua;
+        this.HydroPump = Tipo.Agua;
+        this.Bite = Tipo.Normal;
         this.Defense = false;
     }
 

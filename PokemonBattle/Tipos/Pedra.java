@@ -1,18 +1,17 @@
 package Tipos;
 
-public class Rocha extends Pokemon {
+public class Pedra extends Pokemon {
 
     private Tipo RockSlide;
     private Tipo StoneEdge;
     private Tipo RockThrow;
     private boolean Defense;
 
-    public Rocha(String codigo, String nome, int saude, Tipo tipo, Tipo rockSlide, Tipo stoneEdge, Tipo rockThrow,
-            boolean defense) {
+    public Pedra(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.RockSlide = Tipo.ROCHA;
-        this.StoneEdge = Tipo.ROCHA;
-        this.RockThrow = Tipo.NORMAL;
+        this.RockSlide = Tipo.Pedra;
+        this.StoneEdge = Tipo.Pedra;
+        this.RockThrow = Tipo.Normal;
         this.Defense = false;
     }
 

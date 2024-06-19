@@ -7,12 +7,11 @@ public class Planta extends Pokemon {
     private Tipo Slam;
     private boolean Defense;
 
-    public Planta(String codigo, String nome, int saude, Tipo tipo, Tipo vineWhip, Tipo solarBeam, Tipo slam,
-            boolean defense) {
+    public Planta(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.VineWhip = Tipo.PLANTA;
-        this.SolarBeam = Tipo.PLANTA;
-        this.Slam = Tipo.NORMAL;
+        this.VineWhip = Tipo.Planta;
+        this.SolarBeam = Tipo.Planta;
+        this.Slam = Tipo.Normal;
         this.Defense = false;
     }
 

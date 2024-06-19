@@ -7,12 +7,11 @@ public class Gelo extends Pokemon {
     private Tipo TakeDown;
     private boolean Defense;
 
-    public Gelo(String codigo, String nome, int saude, Tipo tipo, Tipo powderSnow, Tipo avalanche, Tipo takeDown,
-            Tipo defense) {
+    public Gelo(String codigo, String nome, int saude, Tipo tipo) {
         super(codigo, nome, saude, tipo);
-        this.PowderSnow = Tipo.GELO;
-        this.Avalanche = Tipo.GELO;
-        this.TakeDown = Tipo.NORMAL;
+        this.PowderSnow = Tipo.Gelo;
+        this.Avalanche = Tipo.Gelo;
+        this.TakeDown = Tipo.Normal;
         this.Defense = false;
     }
 

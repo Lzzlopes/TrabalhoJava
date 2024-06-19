@@ -3,18 +3,15 @@ package Tipos;
 public class Fogo extends Pokemon {
 
     private Tipo Scratch;
-
     private Tipo FlameThrower;
-
     private Tipo Ember;
-
     private boolean Defense;
 
-    public Fogo(String id, String nome, int saude, Tipo Scratch, Tipo FlameThrower, Tipo Ember, String Defense) {
-        super(id, nome, saude, Tipo.FOGO);
-        this.Ember = Tipo.FOGO;
-        this.FlameThrower = Tipo.FOGO;
-        this.Scratch = Tipo.NORMAL;
+    public Fogo(String id, String nome, int saude, Tipo tipo) {
+        super(id, nome, saude, tipo);
+        this.Ember = Tipo.Fogo;
+        this.FlameThrower = Tipo.Fogo;
+        this.Scratch = Tipo.Normal;
         this.Defense = false;
     }
 
@@ -36,5 +33,16 @@ public class Fogo extends Pokemon {
         }
 
         return (int) (modificadorAtaque * modificadorDefesa * 5);
+    }
+
+    @Override
+    public String toString() {
+        String info ="Pokemon escolhido:\n" +
+                      "Nome: " + getNome() + "\n" +
+                      "Vida: " + getSaude() + "\n" +
+                      "Tipo: " + getTipo();
+        // TODO Auto-generated method stub
+        return "-------------------------------------\n" + "Codigo: " + getCodigo() +
+        "\n" + getNome() + "\nVida:" + getSaude() + "-------------------------------------";
     }
 }
