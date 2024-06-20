@@ -7,9 +7,9 @@ import java.util.Random;
 
 import Tipos.*;
 
-public class OperacoesArquivos {
+public class OperacoesPokemons {
 
-    List<Pokemon> pokedex = new ArrayList<>();
+    private List<Pokemon> pokedex = new ArrayList<>();
 
     String informacoesPokemons = "C:\\Users\\luizg\\Desktop\\java\\pj\\src\\PokemonBattle\\Arquivos\\pokemons.txt";
     String batalha = "C:\\Users\\luizg\\Desktop\\Trabalho\\src\\batalha.txt";
@@ -118,18 +118,21 @@ public class OperacoesArquivos {
 
     public Pokemon escolherPokemon(String id){
 
-        Pokemon pokemonEscolhido = null;
+        Pokemon escolhido = null;
         for(Pokemon pokemon : pokedex){
             if (id.equals(pokemon.getCodigo())) {
-                pokemonEscolhido = pokemon;
+                escolhido = pokemon;
                 System.out.println("Pokemon escolhido:");
-                System.out.println("Nome: " + pokemonEscolhido.getNome());
-                System.out.println("Vida: " + pokemonEscolhido.getSaude());
-                System.out.println("Tipo: " + pokemonEscolhido.getTipo());
+                System.out.println("Codigo: " + pokemon.getCodigo());
+                System.out.println("Nome: " + pokemon.getNome());
+                System.out.println("Vida: " + pokemon.getSaude());
+                System.out.println("Tipo: " + pokemon.getTipo());
                 break;
             }
         }
-        return pokemonEscolhido;
+        return escolhido;
     }
+
+    
 
 }

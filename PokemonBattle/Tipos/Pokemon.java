@@ -1,17 +1,25 @@
 package Tipos;
 
-public abstract class Pokemon {
+public abstract class Pokemon implements Batalha{
 
     private final String codigo;
     private final String nome;
     private int saude;
     private final Tipo tipo;
+    private String ataqueUm;
+    private String ataqueDois;
+    private String ataqueTres;
+    private boolean Defense;
 
-    public Pokemon(String codigo, String nome, int saude, Tipo tipo) {
+    public Pokemon(String codigo, String nome, int saude, Tipo tipo, String ataqueUm, String ataqueDois, String ataqueTres, boolean Defense) {
         this.codigo = codigo;
         this.nome = nome;
         this.saude = saude;
         this.tipo = tipo;
+        this.ataqueUm = ataqueUm;
+        this.ataqueDois = ataqueDois;
+        this.ataqueTres = ataqueTres;
+        this.Defense = false;
     }
 
     public String getCodigo() {
@@ -29,19 +37,17 @@ public abstract class Pokemon {
     public Tipo getTipo() {
         return tipo;
     }
+    public void setSaude(int saude) {
+        this.saude = saude;
+    }
 
     public abstract int calcularDano(Tipo tipoAtacante, Tipo tipoDefensor);
 
-    public void atacar(Pokemon defensor) {
-        System.out.println(nome + " ataca " + defensor.getNome());
-        int dano = calcularDano(this.tipo, defensor.getTipo());
-        defensor.receberDano(dano);
-    }
+    public void atacar(Pokemon defensor) {}
 
-    public void receberDano(int dano) {
-        this.saude -= dano;
-        System.out.println(nome + " recebeu " + dano + " pontos de dano");
-    }
+    public void receberDano(int dano){}
+
+    public void curar(Pokemon jogador){}
 
     @Override
     public String toString() {

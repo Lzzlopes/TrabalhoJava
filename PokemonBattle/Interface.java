@@ -7,20 +7,15 @@ import Tipos.Tipo;
 
 public class Interface {
 
-    public Scanner scanner;
+    public Scanner scanner = new Scanner(System.in);
 
-    OperacoesArquivos opArq = new OperacoesArquivos();
+    OperacoesPokemons opArq = new OperacoesPokemons();
 
-    private static String batalha = "C:\\Users\\luizg\\Desktop\\java\\pj\\src\\PokemonBattle\\Arquivos";
+    //private static String batalha = "C:\\Users\\luizg\\Desktop\\java\\pj\\src\\PokemonBattle\\Arquivos";
 
     File arquivo = new File("batalha.txt");
 
-    public Interface() throws IOException {
-        scanner = new Scanner(System.in);
-        iniciar();
-    }
-
-    public void iniciar() throws IOException {
+    public void iniciar() {
         imprimirCabecalho();
         exibirMenuInicial();
     }
@@ -36,7 +31,7 @@ public class Interface {
         System.out.println("                                                                                 ");
     }
 
-    public void exibirMenuInicial() throws IOException {
+    public void exibirMenuInicial() {
 
         opArq.preencherLista();
 
@@ -76,17 +71,20 @@ public class Interface {
 
         int opcao = scanner.nextInt();
         scanner.nextLine();
+        Pokemon p1 = null;
 
         switch (opcao) {
             case 1:
                 while (true) {
+                    ;
                     System.out.println("Escolha o tipo do seu pokemon:");
                     String tipo = scanner.nextLine();
                     try {
                         Tipo tipoEscolhido = Tipo.valueOf(tipo);
                         opArq.mostrarPokemonsPorTipo(tipoEscolhido);
                         System.out.println("Digite o codigo do Pokemon que deseja");
-                        Pokemon p1 = opArq.escolherPokemon(scanner.nextLine());
+                        p1 = opArq.escolherPokemon(scanner.nextLine());
+
                         break;
 
                     } catch (IllegalArgumentException e) {
@@ -95,7 +93,7 @@ public class Interface {
                 }
                 break;
             case 2:
-                Pokemon p1 = opArq.sortearPokemon();
+                p1 = opArq.sortearPokemon();
                 break;
             default:
                 System.out.println("Opção inválida.");
@@ -103,10 +101,10 @@ public class Interface {
                 break;
         }
 
-        exibirTelaPrincipal();
+        exibirTelaPrincipal(p1);
     }
 
-    public void menuCarregarJogo() throws IOException {
+    public void menuCarregarJogo() {
         System.out.println("01. Exibir Jogos Salvos");
         System.out.println("02. Retornar");
 
@@ -128,7 +126,7 @@ public class Interface {
         }
     }
 
-    public void exibirTelaPrincipal() {
+    public void exibirTelaPrincipal(Pokemon jogador) {
         System.out.println("01. Nova Batalha");
         System.out.println("02. Curar Pokémon");
         System.out.println("03. Sair");
@@ -138,29 +136,37 @@ public class Interface {
 
         switch (opcao) {
             case 1:
-                iniciarBatalha();
+                iniciarBatalha(jogador);
                 break;
             case 2:
-                curarPokemon();
+                curarPokemon(jogador);
                 break;
             case 3:
                 System.out.println("Saindo...");
                 break;
             default:
                 System.out.println("Opção inválida.");
-                exibirTelaPrincipal();
+                exibirTelaPrincipal(jogador);
                 break;
         }
+        
     }
 
-    public void iniciarBatalha() {
+    public void iniciarBatalha(Pokemon jogador) {
+
+        Pokemon computador = null;
+        computador = opArq.sortearPokemon();
+
         System.out.println("(Ataque 1) / (Ataque 2)");
         System.out.println("(Defesa 1) / (Ataque 3)");
-
-        exibirTelaPrincipal();
+        jogador.atacar("Burn", computador);;
+        exibirTelaPrincipal(jogador);
     }
 
-    public void curarPokemon() {
+    public void curarPokemon(Pokemon jogador) {
+
+        jogador.curar(jogador);
+
         System.out.println("quu..__");
         System.out.println(" $$$b  `---.__                                 ");
         System.out.println("  \"$b        `--.                          ___.---uuudP              ");
@@ -199,10 +205,10 @@ public class Interface {
         System.out.println("               |   .:::------------\\       /                          ");
         System.out.println("              /   .''               >::'  /                           ");
         System.out.println("              `',:                 :    .'                            ");
-        System.out.println("                                   `:.:' Tim Park                      ");
-        System.out.println("");
-        System.out.println("Parabéns! Seu Pokémon foi curado.");
-        exibirTelaPrincipal();
+        System.out.println("                                   `:.:'                               ");
+        System.out.println();
+        System.out.println("Parabéns! " + jogador.getNome() + " foi curado.");
+        exibirTelaPrincipal(jogador);
     }
 
 }

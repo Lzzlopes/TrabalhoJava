@@ -1,10 +1,30 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        OperacoesPokemons opArq = new OperacoesPokemons();
         
         Interface menu = new Interface();
+
+        menu.iniciar();
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //    try (
     //            BufferedReader leitor = new BufferedReader(new FileReader(informacoesPokemons))) {

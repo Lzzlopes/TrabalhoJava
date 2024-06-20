@@ -2,17 +2,25 @@ package Tipos;
 
 public class Dragao extends Pokemon {
 
-    private Tipo DragonBreath;
-    private Tipo DragonPulse;
-    private Tipo Headbutt;
-    private boolean Defense;
+    private static String DragonBreath;
+    private static String DragonPulse;
+    private static String Headbutt;
+    private static boolean Defense;
 
     public Dragao(String codigo, String nome, int saude, Tipo tipo) {
-        super(codigo, nome, saude, tipo);
-        this.DragonBreath = Tipo.Dragao;
-        this.DragonPulse = Tipo.Dragao;
-        this.Headbutt = Tipo.Normal;
-        this.Defense = false;
+        super(codigo, nome, saude, tipo, DragonBreath, DragonPulse, Headbutt, Defense);
+    }
+    public void defender() {
+        setDefense(true);
+    }
+
+    @Override
+    public void curar(Pokemon jogador) {
+        setSaude((int) (getSaude() + (getSaude() * 0.65)));
+    }
+
+    public static void setDefense(boolean defense) {
+        Defense = defense;
     }
 
     @Override
@@ -20,18 +28,38 @@ public class Dragao extends Pokemon {
         double modificadorAtaque = 1.0;
         double modificadorDefesa = 1.0;
 
-        if (tipoAtaque.isForteContra(tipoDefensor)) {
+        if (tipoAtaque.ataqueCritico(tipoAtaque, tipoDefensor)) {
             modificadorAtaque = 2.0;
-        } else if (tipoAtaque.isFracoContra(tipoDefensor)) {
+        } else if (tipoAtaque.DanoCritico(tipoAtaque, tipoDefensor)) {
             modificadorAtaque = 0.5;
         }
 
-        if (tipoDefensor.isForteContra(tipoAtaque)) {
+        if (tipoDefensor.ataqueCritico(tipoAtaque, tipoDefensor)) {
             modificadorDefesa = 0.5;
-        } else if (tipoDefensor.isFracoContra(tipoAtaque)) {
+        } else if (tipoDefensor.DanoCritico(tipoAtaque, tipoDefensor)) {
             modificadorDefesa = 2.0;
         }
 
         return (int) (modificadorAtaque * modificadorDefesa * 5);
+    }
+
+    @Override
+    public void atacar(String nomeAtaque, Pokemon defensor) {
+        System.out.println(getNome() + "usou " + nomeAtaque + "em" + defensor);
+        if (nomeAtaque != Headbutt) {
+            defensor.receberDano(calcularDano(this.getTipo(), defensor.getTipo()));
+        } else
+            defensor.receberDano(calcularDano(Tipo.Normal, defensor.getTipo()));
+
+    }
+
+    @Override
+    public void receberDano(int dano) {
+        if(Defense == false){
+            this.setSaude(getSaude() - dano);
+        } else
+            {this.setSaude(getSaude() - (int) (dano * 0.5));}
+                
+        System.out.println(getNome() + "recebeu " + dano + "pontos de dano!");
     }
 }

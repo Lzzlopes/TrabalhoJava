@@ -2,45 +2,46 @@ package Tipos;
 
 public enum Tipo {
 
-  Fogo, Agua, Planta, Eletrico, Terra, Pedra, Gelo, Lutador, Voador, Psiquico, Veneno, Inseto, Fantasma, Dragao, Aco, Fada, Normal, Noturno;
+  Fogo, Agua, Planta, Eletrico, Terra, Pedra, Gelo, Lutador, Voador, Psiquico, Veneno, Inseto, Fantasma, Dragao, Aco,
+  Fada, Normal, Noturno;
 
-  public boolean isForteContra(Tipo outro) {
+  public boolean ataqueCritico(Tipo atk, Tipo def) {
 
-    switch (this) {
+    switch (atk) {
       case Fogo:
-        return outro == Planta || outro == Gelo || outro == Inseto || outro == Aco;
+        return def == Planta || def == Gelo || def == Inseto || def == Aco;
       case Agua:
-        return outro == Fogo || outro == Pedra || outro == Terra;
+        return def == Fogo || def == Pedra || def == Terra;
       case Planta:
-        return outro == Agua || outro == Pedra || outro == Terra;
+        return def == Agua || def == Pedra || def == Terra;
       case Eletrico:
-        return outro == Agua || outro == Voador;
+        return def == Agua || def == Voador;
       case Terra:
-        return outro == Fogo || outro == Eletrico || outro == Veneno || outro == Pedra || outro == Aco;
+        return def == Fogo || def == Eletrico || def == Veneno || def == Pedra || def == Aco;
       case Pedra:
-        return outro == Fogo || outro == Gelo || outro == Voador || outro == Inseto;
+        return def == Fogo || def == Gelo || def == Voador || def == Inseto;
       case Gelo:
-        return outro == Planta || outro == Terra || outro == Dragao || outro == Voador;
+        return def == Planta || def == Terra || def == Dragao || def == Voador;
       case Lutador:
-        return outro == Normal || outro == Gelo || outro == Pedra || outro == Aco || outro == Noturno;
+        return def == Normal || def == Gelo || def == Pedra || def == Aco || def == Noturno;
       case Voador:
-        return outro == Planta || outro == Lutador || outro == Inseto;
+        return def == Planta || def == Lutador || def == Inseto;
       case Psiquico:
-        return outro == Lutador || outro == Veneno;
+        return def == Lutador || def == Veneno;
       case Veneno:
-        return outro == Planta || outro == Fada;
+        return def == Planta || def == Fada;
       case Inseto:
-        return outro == Planta || outro == Psiquico || outro == Noturno;
+        return def == Planta || def == Psiquico || def == Noturno;
       case Fantasma:
-        return outro == Psiquico || outro == Fantasma;
+        return def == Psiquico || def == Fantasma;
       case Dragao:
-        return outro == Dragao;
+        return def == Dragao;
       case Aco:
-        return outro == Gelo || outro == Pedra || outro == Fada;
+        return def == Gelo || def == Pedra || def == Fada;
       case Fada:
-        return outro == Lutador || outro == Dragao || outro == Noturno;
+        return def == Lutador || def == Dragao || def == Noturno;
       case Noturno:
-        return outro == Psiquico || outro == Fantasma;
+        return def == Psiquico || def == Fantasma;
       case Normal:
         return false;
       default:
@@ -48,48 +49,47 @@ public enum Tipo {
     }
   }
 
-  public boolean isFracoContra(Tipo outro) {
+  public boolean DanoCritico(Tipo atk,Tipo def) {
 
-    switch (this) {
+    switch (atk) {
       case Fogo:
-        return outro == Agua || outro == Pedra || outro == Terra;
+        return def == Agua || def == Pedra || def == Terra;
       case Agua:
-        return outro == Eletrico || outro == Planta;
+        return def == Eletrico || def == Planta;
       case Planta:
-        return outro == Fogo || outro == Gelo || outro == Voador || outro == Inseto || outro == Veneno;
+        return def == Fogo || def == Gelo || def == Voador || def == Inseto || def == Veneno;
       case Eletrico:
-        return outro == Terra;
+        return def == Terra;
       case Terra:
-        return outro == Agua || outro == Gelo || outro == Planta;
+        return def == Agua || def == Gelo || def == Planta;
       case Pedra:
-        return outro == Agua || outro == Planta || outro == Lutador || outro == Terra || outro == Aco;
+        return def == Agua || def == Planta || def == Lutador || def == Terra || def == Aco;
       case Gelo:
-        return outro == Fogo || outro == Lutador || outro == Pedra || outro == Aco;
+        return def == Fogo || def == Lutador || def == Pedra || def == Aco;
       case Lutador:
-        return outro == Voador || outro == Psiquico || outro == Fada;
+        return def == Voador || def == Psiquico || def == Fada;
       case Voador:
-        return outro == Eletrico || outro == Gelo || outro == Pedra;
+        return def == Eletrico || def == Gelo || def == Pedra;
       case Psiquico:
-        return outro == Inseto || outro == Fantasma || outro == Noturno;
+        return def == Inseto || def == Fantasma || def == Noturno;
       case Veneno:
-        return outro == Terra || outro == Psiquico;
+        return def == Terra || def == Psiquico;
       case Inseto:
-        return outro == Fogo || outro == Voador || outro == Pedra;
+        return def == Fogo || def == Voador || def == Pedra;
       case Fantasma:
-        return outro == Fantasma || outro == Noturno;
+        return def == Fantasma || def == Noturno;
       case Dragao:
-        return outro == Gelo || outro == Dragao || outro == Fada;
+        return def == Gelo || def == Dragao || def == Fada;
       case Aco:
-        return outro == Fogo || outro == Lutador || outro == Terra;
+        return def == Fogo || def == Lutador || def == Terra;
       case Fada:
-        return outro == Veneno || outro == Aco;
+        return def == Veneno || def == Aco;
       case Noturno:
-        return outro == Lutador || outro == Inseto || outro == Fada;
+        return def == Lutador || def == Inseto || def == Fada;
       case Normal:
-        return outro == Lutador;
+        return def == Lutador;
       default:
         return false;
     }
   }
-
 }

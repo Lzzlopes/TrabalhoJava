@@ -2,20 +2,29 @@ package Tipos;
 
 public class Aco extends Pokemon {
 
-    private Tipo MagneticBomb;
+    private static String MagneticBomb;
 
-    private Tipo IronHead;
+    private static String IronHead;
 
-    private Tipo Tackle;
+    private static String Tackle;
 
-    private boolean Defense;
+    private static boolean Defense;
 
     public Aco(String codigo, String nome, int saude, Tipo tipo) {
-        super(codigo, nome, saude, tipo);
-        this.MagneticBomb = Tipo.Aco;
-        this.IronHead = Tipo.Aco;
-        this.Tackle = Tipo.Normal;
-        this.Defense = false;
+        super(codigo, nome, saude, tipo, MagneticBomb, IronHead, Tackle, Defense);
+    }
+
+    public void defender() {
+        setDefense(true);
+    }
+
+    public static void setDefense(boolean defense) {
+        Defense = defense;
+    }
+
+    @Override
+    public void curar(Pokemon jogador) {
+        setSaude((int) (getSaude() + (getSaude() * 0.65)));
     }
 
     @Override
@@ -23,18 +32,38 @@ public class Aco extends Pokemon {
         double modificadorAtaque = 1.0;
         double modificadorDefesa = 1.0;
 
-        if (tipoAtaque.isForteContra(tipoDefensor)) {
+        if (tipoAtaque.ataqueCritico(tipoAtaque, tipoDefensor)) {
             modificadorAtaque = 2.0;
-        } else if (tipoAtaque.isFracoContra(tipoDefensor)) {
+        } else if (tipoAtaque.DanoCritico(tipoAtaque, tipoDefensor)) {
             modificadorAtaque = 0.5;
         }
 
-        if (tipoDefensor.isForteContra(tipoAtaque)) {
+        if (tipoDefensor.ataqueCritico(tipoAtaque, tipoDefensor)) {
             modificadorDefesa = 0.5;
-        } else if (tipoDefensor.isFracoContra(tipoAtaque)) {
+        } else if (tipoDefensor.DanoCritico(tipoAtaque, tipoDefensor)) {
             modificadorDefesa = 2.0;
         }
 
         return (int) (modificadorAtaque * modificadorDefesa * 5);
+    }
+
+    @Override
+    public void atacar(String nomeAtaque, Pokemon defensor) {
+        System.out.println(getNome() + "usou " + nomeAtaque + "em" + defensor);
+        if (nomeAtaque != Tackle) {
+            defensor.receberDano(calcularDano(this.getTipo(), defensor.getTipo()));
+        } else
+            defensor.receberDano(calcularDano(Tipo.Normal, defensor.getTipo()));
+
+    }
+
+    @Override
+    public void receberDano(int dano) {
+        if(Defense == false){
+            this.setSaude(getSaude() - dano);
+        } else
+            {this.setSaude(getSaude() - (int) (dano * 0.5));}
+                
+        System.out.println(getNome() + "recebeu " + dano + "pontos de dano!");
     }
 }
