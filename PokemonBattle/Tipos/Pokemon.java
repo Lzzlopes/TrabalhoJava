@@ -1,6 +1,6 @@
 package Tipos;
 
-public abstract class Pokemon implements Batalha{
+public abstract class Pokemon implements Batalha {
 
     private final String codigo;
     private final String nome;
@@ -11,7 +11,8 @@ public abstract class Pokemon implements Batalha{
     private String ataqueTres;
     private boolean Defense;
 
-    public Pokemon(String codigo, String nome, int saude, Tipo tipo, String ataqueUm, String ataqueDois, String ataqueTres, boolean Defense) {
+    public Pokemon(String codigo, String nome, int saude, Tipo tipo, String ataqueUm, String ataqueDois,
+            String ataqueTres, boolean Defense) {
         this.codigo = codigo;
         this.nome = nome;
         this.saude = saude;
@@ -34,28 +35,53 @@ public abstract class Pokemon implements Batalha{
         return saude;
     }
 
-    public Tipo getTipo() {
-        return tipo;
-    }
     public void setSaude(int saude) {
         this.saude = saude;
     }
 
-    public abstract int calcularDano(Tipo tipoAtacante, Tipo tipoDefensor);
+    public Tipo getTipo() {
+        return tipo;
+    }
 
-    public void atacar(Pokemon defensor) {}
+    public abstract int usarAtaque1();
 
-    public void receberDano(int dano){}
+    public abstract int usarAtaque2();
 
-    public void curar(Pokemon jogador){}
+    public abstract int usarAtaque3();
+
+    public abstract int calcularDano(Tipo tipoAtacante, Tipo tipoDefensor, int dano, boolean def);
+
+    public abstract void atacar(int ataqueEscolhido, Pokemon defensor);
+
+    public abstract void receberDano(int dano);
+
+    public abstract void curar(Pokemon jogador);
+
+    public String getAtaqueUm() {
+        return ataqueUm;
+    }
+
+    public String getAtaqueDois() {
+        return ataqueDois;
+    }
+
+    public String getAtaqueTres() {
+        return ataqueTres;
+    }
 
     @Override
     public String toString() {
-        return "Pokemon{" +
-                "codigo='" + codigo + '\'' +
-                ", nome='" + nome + '\'' +
-                ", saude=" + saude +
-                ", tipo=" + tipo +
-                '}';
+        String info = String.format("Codigo: %s\nNome: %s\nSaude: %d", codigo, nome, saude);
+        String border = "+-------------------+";
+        StringBuilder box = new StringBuilder();
+
+        box.append(border).append("\n");
+        for (String line : info.split("\n")) {
+            box.append(String.format("| %-17s |\n", line));
+        }
+        box.append(border);
+
+        return box.toString();
     }
+
 }

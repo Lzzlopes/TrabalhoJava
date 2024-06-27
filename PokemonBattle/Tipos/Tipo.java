@@ -1,9 +1,24 @@
 package Tipos;
 
 public enum Tipo {
-
-  Fogo, Agua, Planta, Eletrico, Terra, Pedra, Gelo, Lutador, Voador, Psiquico, Veneno, Inseto, Fantasma, Dragao, Aco,
-  Fada, Normal, Noturno;
+  Fogo,
+  Agua,
+  Planta,
+  Eletrico,
+  Terra,
+  Pedra,
+  Gelo,
+  Lutador,
+  Voador,
+  Psiquico,
+  Veneno,
+  Inseto,
+  Fantasma,
+  Dragao,
+  Aco,
+  Fada,
+  Normal,
+  Noturno;
 
   public boolean ataqueCritico(Tipo atk, Tipo def) {
 
@@ -49,7 +64,7 @@ public enum Tipo {
     }
   }
 
-  public boolean DanoCritico(Tipo atk,Tipo def) {
+  public boolean danoReduzido(Tipo atk, Tipo def) {
 
     switch (atk) {
       case Fogo:

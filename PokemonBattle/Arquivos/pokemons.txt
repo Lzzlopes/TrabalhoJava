@@ -8,16 +8,16 @@ F007, Arcanine, 255, Fogo
 F008, Ponyta, 190, Fogo
 F009, Rapidash, 350, Fogo
 F010, Flareon, 525, Fogo
-A001, Squirtle, 90, Agua
-A002, Wartortle, 235, Agua
-A003, Blastoise, 360, Agua
-A004, Psyduck, 50, Agua
-A005, Golduck, 465, Agua
-A006, Poliwag, 60, Agua
-A007, Poliwhirl, 170, Agua
-A008, Poliwrath, 510, Agua
-A009, Tentacool, 40, Agua
-A010, Tentacruel, 70, Agua
+AG001, Squirtle, 90, Agua
+AG002, Wartortle, 235, Agua
+AG003, Blastoise, 360, Agua
+AG004, Psyduck, 50, Agua
+AG005, Golduck, 465, Agua
+AG006, Poliwag, 60, Agua
+AG007, Poliwhirl, 170, Agua
+AG008, Poliwrath, 510, Agua
+AG009, Tentacool, 40, Agua
+AG010, Tentacruel, 70, Agua
 P001, Bulbasaur, 95, Planta
 P002, Ivysaur, 260, Planta
 P003, Venusaur, 280, Planta
@@ -100,20 +100,8 @@ PS010, Grumpig, 480, Psiquico
 VN004, Vileplume, 490, Veneno
 VN005, Grimer, 80, Veneno
 VN006, Muk, 560, Veneno
-VN007, Tentacool, 40, Veneno
-VN008, Tentacruel, 70, Veneno
-VN009, Koffing, 60, Veneno
-VN010, Weezing, 600, Veneno
-IN001, Caterpie, 20, Veneno
-IN002, Metapod, 30, Veneno
-IN003, Butterfree, 390, Veneno
-IN004, Weedle, 35, Veneno
-IN005, Kakuna, 30, Veneno
-IN006, Beedrill, 495, Veneno
-IN007, Paras, 35, Veneno
-IN008, Parasect, 405, Veneno
-IN009, Venonat, 60, Veneno
-IN010, Venomoth, 490, Veneno
+VN007, Koffing, 60, Veneno
+VN008, Weezing, 600, Veneno
 FNT001, Gastly, 30, Fantasma
 FNT002, Haunter, 355, Fantasma
 FNT003, Gengar, 480, Fantasma
@@ -124,37 +112,37 @@ FNT007, Litwick, 50, Fantasma
 FNT008, Lampent, 330, Fantasma
 FNT009, Chandelure, 600, Fantasma
 FNT010, Mareanie, 40, Fantasma
-DG001, Charizard Mega X, 634, Dragao
-DG002, Charizard Mega Y, 634, Dragao
+DG001, Charizard X, 634, Dragao
+DG002, Charizard Y, 634, Dragao
 DG003, Dragonite, 660, Dragao
-DG004, Salamence Mega, 673, Dragao
+DG004, Salamence, 673, Dragao
 DG005, Dratini, 60, Dragao
 DG006, Dragonair, 170, Dragao
 DG007, Dragonite, 660, Dragao
 DG008, Deino, 50, Dragao
 DG009, Zweilous, 450, Dragao
 DG010, Hydreigon, 635, Dragao
-ACO001, Magnezone, 700, Aco
-ACO002, Lucario (Mega), 725, Aco
-ACO003, Forretress, 405, Aco
-ACO004, Steelix, 800, Aco
-ACO005, Bronzor, 35, Aco
-ACO006, Bronzong, 635, Aco
-FADA001, Gardevoir (Mega), 618, Fada
-FADA002, Togekiss, 545, Fada
-FADA003, Sylveon, 525, Fada
-FADA004, Clefable, 703, Fada
-FADA005, Azumarill, 420, Fada
-FADA006, Primarina, 530, Fada
+A001, Magnezone, 700, Aco
+A002, Lucario, 725, Aco
+A003, Forretress, 405, Aco
+A004, Steelix, 800, Aco
+A005, Bronzor, 35, Aco
+A006, Bronzong, 635, Aco
+FD001, Gardevoir, 618, Fada
+FD002, Togekiss, 545, Fada
+FD003, Sylveon, 525, Fada
+FD004, Clefable, 703, Fada
+FD005, Azumarill, 420, Fada
+FD006, Primarina, 530, Fada
 NOR001, Snorlax, 680, Normal
 NOR002, Porygon-Z, 535, Normal
-NOR003, Lopunny (Mega), 580, Normal
-NOR004, Blissey, 255, Normal
+NOR003, Lopunny, 580, Normal
+NOR004, Ratata, 255, Normal
 NOR005, Ditto, 288, Normal
-NOR006, Kangaskhan (Mega), 590, Normal
+NOR006, Kangaskhan, 590, Normal
 NOT001, Umbreon, 525, Noturno
 NOT002, Honchkrow, 505, Noturno
 NOT003, Hydreigon, 600, Noturno
 NOT004, Zoroark, 510, Noturno
-NOT005, Absol (Mega), 565, Noturno
+NOT005, Absol, 565, Noturno
 NOT006, Tyranitar, 600, Noturno

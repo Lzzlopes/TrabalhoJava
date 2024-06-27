@@ -11,11 +11,9 @@ public class OperacoesPokemons {
 
     private List<Pokemon> pokedex = new ArrayList<>();
 
-    String informacoesPokemons = "C:\\Users\\luizg\\Desktop\\java\\pj\\src\\PokemonBattle\\Arquivos\\pokemons.txt";
-    String batalha = "C:\\Users\\luizg\\Desktop\\Trabalho\\src\\batalha.txt";
+    String informacoesPokemons = "Arquivos\\pokemons.txt";
 
     public void preencherLista() {
-        // Leitura do arquivo txt jogando os pokemons num arraylist
         try (BufferedReader br = new BufferedReader(new FileReader(informacoesPokemons))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -95,44 +93,38 @@ public class OperacoesPokemons {
         }
     }
 
-    public void ListarTodosPokemons() {
-        for (Pokemon pokemon : pokedex) {
-            System.out.println("--------------------------------------");
-            System.out.println("nome: " + pokemon.getNome());
-            System.out.println("Saude: " + pokemon.getSaude());
-            System.out.println("tipo: " + pokemon.getTipo());
-            System.out.println("--------------------------------------");
-        }
-    }
-
-    public Pokemon sortearPokemon(){
+public Pokemon sortearPokemon() {
         Random rand = new Random();
-
         Pokemon pokemonSorteado = pokedex.get(rand.nextInt(pokedex.size()));
-        System.out.println("Pokemon sorteado");
-        System.out.println("Nome: " + pokemonSorteado.getNome());
-        System.out.println("Vida: " + pokemonSorteado.getSaude());
-        System.out.println("Tipo: " + pokemonSorteado.getTipo());
+
+        System.out.println("+-------------------------+-----------------------+");
+        System.out.println("| Pokémon sorteado        |                       |");
+        System.out.println("+-------------------------+-----------------------+");
+        System.out.println("| Nome: " + pokemonSorteado.getNome());
+        System.out.println("| Vida: " + pokemonSorteado.getSaude());
+        System.out.println("| Tipo: " + pokemonSorteado.getTipo());
+        System.out.println("+-------------------------+-----------------------+");
+
         return pokemonSorteado;
     }
 
-    public Pokemon escolherPokemon(String id){
-
+    public Pokemon escolherPokemon(String id) {
         Pokemon escolhido = null;
-        for(Pokemon pokemon : pokedex){
+        for (Pokemon pokemon : pokedex) {
             if (id.equals(pokemon.getCodigo())) {
                 escolhido = pokemon;
-                System.out.println("Pokemon escolhido:");
-                System.out.println("Codigo: " + pokemon.getCodigo());
-                System.out.println("Nome: " + pokemon.getNome());
-                System.out.println("Vida: " + pokemon.getSaude());
-                System.out.println("Tipo: " + pokemon.getTipo());
+
+                System.out.println("+-------------------------+-----------------------+");
+                System.out.println("| Pokémon escolhido       |                       |");
+                System.out.println("+-------------------------+-----------------------+");
+                System.out.println("| Nome: " + pokemon.getNome());
+                System.out.println("| Vida: " + pokemon.getSaude());
+                System.out.println("| Tipo: " + pokemon.getTipo());
+                System.out.println("+-------------------------+-----------------------+");
+
                 break;
             }
         }
         return escolhido;
     }
-
-    
-
 }
