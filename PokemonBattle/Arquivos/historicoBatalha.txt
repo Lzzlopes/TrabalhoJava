@@ -1,0 +1,3 @@
+
+l: Pokemon jogador: Weezing, Pokemon computador: Moltres, Vencedor: Weezing
+l: Pokemon jogador: Weezing, Pokemon computador: Charizard, Vencedor: Charizard

@@ -63,16 +63,6 @@ public class Menu {
         switch (opcao) {
             case 1:
                 menuNovoJogo();
-                if (arquivo.exists()) {
-                    break;
-                } else {
-                    try {
-                        arquivo.createNewFile();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
                 break;
             case 2:
                 menuCarregarJogo();
