@@ -1,6 +1,6 @@
 # TrabalhoJava
 
-Projeto Pokemon Battle Descrição Este projeto foi desenvolvido pelos alunos Luiz, Luiz Gabriel, Pedro e Samuel. O objetivo é criar um jogo de batalha de Pokémons utilizando a linguagem de programação Java. O projeto inclui funcionalidades como listar, escolher e sortear Pokémons, além de permitir batalhas entre os Pokémons selecionados.
+Projeto Pokemon Battle Descrição Este projeto foi desenvolvido pelos alunos Luiz Athar, Luiz Gabriel, Pedro e Samuel. O objetivo é criar um jogo de batalha de Pokémons utilizando a linguagem de programação Java. O projeto inclui funcionalidades como listar, escolher e sortear Pokémons, além de permitir batalhas entre os Pokémons selecionados.
 
 Estrutura do Projeto O projeto está organizado em diferentes classes e pacotes para manter a modularidade e facilitar a manutenção do código.
 
@@ -34,4 +34,4 @@ Funcionalidades Listar todos os Pokémons: Exibe todos os Pokémons disponíveis
 
 Novo Jogo: Permite iniciar um novo jogo. Carregar Jogo: Carrega um jogo salvo anteriormente (atualmente não implementado). No menu de novo jogo, o usuário pode escolher um Pokémon manualmente ou optar por um sorteio aleatório. Após selecionar o Pokémon, o usuário pode iniciar uma batalha, curar o Pokémon ou sair do jogo.
 
-Autores Luiz Luiz Gabriel Pedro Samuel
+Autores Luiz Athar Luiz Gabriel Pedro Samuel
